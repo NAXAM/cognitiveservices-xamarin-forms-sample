@@ -22,7 +22,14 @@ namespace CognitiveServiceQs.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+            Acr.UserDialogs.UserDialogs.Init(() => this);
+
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

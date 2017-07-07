@@ -3,35 +3,63 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CognitiveServiceQs" 
-    x:Class="CognitiveServiceQs.CognitiveServiceQsPage">
+    x:Class="CognitiveServiceQs.CognitiveServiceQsPage"
+    BackgroundColor="White">
     <ContentPage.Padding>
-        <OnPlatform iOS="0,20,0,0" />
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
     </ContentPage.Padding>
     <Grid RowSpacing="16">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="200" />
-            <RowDefinition Height="56" />
+            <RowDefinition Height="72" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
 
+        <Label 
+            Margin="16"
+            Text="OCR with Cognitive Services"
+            FontSize="24"
+            TextColor="Green"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            />
+        
         <Image 
+            Grid.Row="1"
             x:Name="imgPicked"
-            BackgroundColor="White"
-            Source="naxam.png"
+            BackgroundColor="Green"
             Aspect="AspectFit"
             />
 
-        <Button 
-            x:Name="btnPickImage"
-            Text="Pick from Gallery"
-            />
-
-        <Button 
-            x:Name="btnPickImage"
-            Text="Take a new Photo"
-            />
+        <StackLayout
+            Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalOptions="Fill"
+            Spacing="16"
+            Margin="16"
+            >
+            <Button
+                x:Name="btnPickImage"
+                Text="Pick from Gallery"
+                BackgroundColor="Green"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                />
+            <Button 
+                Grid.Row="1"
+                x:Name="btnTakePhoto"
+                Text="Take a new Photo"
+                BackgroundColor="Green"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                />
+        </StackLayout>
 
         <Editor 
+            Grid.Row="3"
             x:Name="txtResult"
             />
     </Grid>
