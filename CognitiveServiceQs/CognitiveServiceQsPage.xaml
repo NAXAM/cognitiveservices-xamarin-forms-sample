@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:CognitiveServiceQs" 
+    x:Class="CognitiveServiceQs.CognitiveServiceQsPage">
+    <ContentPage.Padding>
+        <OnPlatform iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    <Grid RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="56" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image 
+            x:Name="imgPicked"
+            BackgroundColor="White"
+            Source="naxam.png"
+            Aspect="AspectFit"
+            />
+
+        <Button 
+            x:Name="btnPickImage"
+            Text="Pick from Gallery"
+            />
+
+        <Button 
+            x:Name="btnPickImage"
+            Text="Take a new Photo"
+            />
+
+        <Editor 
+            x:Name="txtResult"
+            />
+    </Grid>
+</ContentPage>
